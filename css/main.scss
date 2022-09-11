@@ -1,0 +1,86 @@
+@use "./forwars";
+
+.slider-container {
+  margin: 10px auto;
+  position: relative;
+  width: 80%;
+  height: 600px;
+
+  .slide-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(#000, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    z-index: 2;
+    border-radius: 6px;
+  }
+
+  img {
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.slider-controls {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  .prev,
+  .next {
+    background-color: #009688;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    user-select: none;
+    display: inline-block;
+    width: 20%;
+
+    &.disabled {
+      background-color: rgba(0 150 136 / 50%);
+      cursor: no-drop;
+    }
+  }
+
+  .indicators {
+    width: 60%;
+
+    ul {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+
+      li {
+        background-color: #f6f6f6;
+        color: #333;
+        font-weight: bold;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        border-radius: 4px;
+        margin: 0 2px;
+        line-height: 28px;
+        cursor: pointer;
+
+        &.active {
+          background-color: #009688;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
